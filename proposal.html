@@ -1,0 +1,244 @@
+﻿```html
+<!DOCTYPE html>
+<html lang="my">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>မမရေ...</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="proposal-page">
+
+<main class="proposal-container">
+
+    <section class="proposal-card">
+
+        <p class="proposal-label">FOR MY LOVE</p>
+
+        <h1>မမရေ...</h1>
+
+        <div class="proposal-line"></div>
+
+
+        <div class="proposal-message">
+
+            <p>
+                ပျော်လိုက်တာ မမရယ်။
+            </p>
+
+            <p>
+                မောင် မမကို အမြဲချစ်မယ်။<br>
+                ဒီနေ့လိုပဲ နောက်နေ့တွေမှာလည်း<br>
+                မမနဲ့အတူ ရှိနေချင်တယ်။
+            </p>
+
+            <p>
+                မောင်တို့ အတူတူဖြတ်သန်းလာခဲ့တဲ့<br>
+                အချိန်တွေထက် ပိုများတဲ့အချိန်တွေကို<br>
+                မမနဲ့အတူ ဆက်ဖြတ်သန်းချင်တယ်။
+            </p>
+
+            <p>
+                မမရဲ့လက်ကို ကိုင်ပြီး<br>
+                ဘဝတစ်လျှောက်လုံး အတူလျှောက်ချင်တယ်။
+            </p>
+
+            <p class="proposal-emphasis">
+                မမရေ...
+            </p>
+
+            <p>
+                မောင့်ဘဝရဲ့ နောက်ဆုံးအထိ<br>
+                မမက မောင့်ဘေးမှာ ရှိပေးမလား။
+            </p>
+
+            <p class="proposal-final">
+                မောင်နဲ့ လက်ထပ်ပေးမလား မမ။
+            </p>
+
+            <div class="marriage-promise">
+
+                <p>
+                    မောင်တို့ လက်ထပ်ပြီးရင်
+                    အိမ်မှုကိစ္စတွေ မောင်ပဲလုပ်မယ် မမ။
+                </p>
+
+                <p>
+                    မမကို ပင်ပန်းတာမျိုးတွေ
+                    မဖြစ်စေချင်ဘူး။
+                </p>
+
+                <p>
+                    အကုန်လုံး မောင်မောင်ပဲလုပ်မယ်။
+                </p>
+
+                <p>
+                    မမက မောင့်မောင့်မိန်းမပဲ
+                    လုပ်ပေးနော် မမ။
+                </p>
+
+                <p>
+                    မမကို ကျန်းကျန်းမာမာ၊
+                    ချမ်းချမ်းသာသာနဲ့
+                    စိတ်ချမ်းချမ်းသာသာ
+                    ထားပေးမယ် မမ။
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="proposal-question">
+
+            <p>မမ...</p>
+
+            <h2>
+                မောင်နဲ့ လက်ထပ်မလား?
+            </h2>
+
+        </div>
+
+
+        <div class="proposal-buttons">
+
+            <button
+                id="noButton"
+                class="proposal-button no-button"
+                onclick="sayNo()">
+                မယူဘူး
+            </button>
+
+            <button
+                id="yesButton"
+                class="proposal-button yes-button"
+                onclick="sayYes()">
+                မောင်နဲ့လက်ထပ်မယ်
+            </button>
+
+        </div>
+
+
+        <p id="proposalNote" class="proposal-note"></p>
+
+    </section>
+
+</main>
+
+
+<script>
+
+let noCount = 0;
+
+const noButton = document.getElementById("noButton");
+const yesButton = document.getElementById("yesButton");
+const proposalNote = document.getElementById("proposalNote");
+
+
+function sayNo() {
+
+    noCount++;
+
+    /*
+        Every time "No" is pressed,
+        the Yes button becomes bigger.
+    */
+
+    let yesScale = 1 + (noCount * 0.18);
+
+    /*
+        Keep it from becoming completely ridiculous
+        on extremely small screens.
+    */
+
+    yesScale = Math.min(yesScale, 3.5);
+
+    yesButton.style.transform =
+        `scale(${yesScale})`;
+
+    /*
+        Make No button slowly smaller.
+    */
+
+    let noScale = 1 - (noCount * 0.08);
+
+    noScale = Math.max(noScale, 0.55);
+
+    noButton.style.transform =
+        `scale(${noScale})`;
+
+
+    const messages = [
+
+        "ဟင်... မမက မယူဘူးတဲ့လား",
+
+        "မောင်ကတော့ မမကို ယူမှာနော်",
+
+        "မမရယ်... မောင့်ကို မငြင်းနဲ့နော်",
+
+        "မောင်မောင် တကယ်ချစ်တာပါ မမ",
+
+        "No နှိပ်လေလေ Yes က ပိုကြီးလာလေလေပဲ",
+
+        "မမ နောက်ဆုံးတော့ Yes ကိုပဲ နှိပ်ရမှာနော်",
+
+        "မမရေ... မောင်စောင့်နေတယ်",
+
+        "ဒီတစ်ခါတော့ မမ Yes နှိပ်ပေးနော်"
+
+    ];
+
+
+    proposalNote.textContent =
+        messages[
+            Math.min(
+                noCount - 1,
+                messages.length - 1
+            )
+        ];
+
+
+    /*
+        After several No clicks,
+        make the Yes button visually dominant.
+    */
+
+    if (noCount >= 5) {
+
+        yesButton.classList.add("very-big");
+
+    }
+
+}
+
+
+function sayYes() {
+
+    proposalNote.textContent =
+        "မောင် အရမ်းပျော်တယ် မမ...";
+
+
+    yesButton.disabled = true;
+    noButton.disabled = true;
+
+
+    yesButton.classList.add("accepted");
+
+
+    setTimeout(() => {
+
+        window.location.href = "yes.html";
+
+    }, 1300);
+
+}
+
+</script>
+
+</body>
+</html>
+```

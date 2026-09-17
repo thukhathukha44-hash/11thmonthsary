@@ -1,0 +1,518 @@
+﻿```html
+<!DOCTYPE html>
+<html lang="my">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy 11th Monthsary | Eaint Mon Aung</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Sans+Myanmar:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #09070b;
+            color: #f6edf1;
+            font-family: "Noto Sans Myanmar", sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           BACKGROUND
+        ========================== */
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(105, 35, 68, 0.22), transparent 35%),
+                radial-gradient(circle at 80% 70%, rgba(73, 35, 91, 0.20), transparent 35%);
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image:
+                radial-gradient(circle, rgba(255,255,255,0.45) 1px, transparent 1px);
+            background-size: 110px 110px;
+            opacity: 0.08;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            animation: heroAppear 2s ease forwards;
+        }
+
+        .small-title {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.25rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #c98ca7;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(4rem, 10vw, 8rem);
+            font-weight: 500;
+            line-height: 0.85;
+            color: #fff5f8;
+            margin-bottom: 30px;
+        }
+
+        .hero h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 400;
+            color: #dba6ba;
+            margin-bottom: 12px;
+        }
+
+        .hero .eternity {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #bba8b1;
+            letter-spacing: 2px;
+        }
+
+        .date {
+            margin-top: 45px;
+            font-size: 0.85rem;
+            letter-spacing: 5px;
+            color: #8e7c84;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 75px;
+            background: linear-gradient(to bottom, #b96d8b, transparent);
+            margin: 45px auto 0;
+            animation: pulseLine 2s infinite;
+        }
+
+        /* =========================
+           MESSAGE
+        ========================== */
+
+        .message-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 25px 100px;
+        }
+
+        .section-label {
+            text-align: center;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.1rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #b96d8b;
+            margin-bottom: 55px;
+        }
+
+        .message-card {
+            position: relative;
+            padding: 55px 50px;
+            background: rgba(22, 15, 21, 0.72);
+            border: 1px solid rgba(201, 140, 167, 0.18);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+            border-radius: 3px;
+        }
+
+        .message-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 1px;
+            background: #b96d8b;
+        }
+
+        .message-card p {
+            font-size: 1.05rem;
+            line-height: 2.15;
+            font-weight: 300;
+            color: #eee2e7;
+            margin-bottom: 35px;
+        }
+
+        .message-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            text-align: center;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2rem !important;
+            line-height: 1.5 !important;
+            color: #e3a8bd !important;
+            margin: 55px 0 !important;
+        }
+
+        /* =========================
+           LITTLE MEMORIES
+        ========================== */
+
+        .memories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin: 55px 0;
+        }
+
+        .memory {
+            padding: 28px 15px;
+            text-align: center;
+            border-top: 1px solid rgba(201, 140, 167, 0.2);
+            border-bottom: 1px solid rgba(201, 140, 167, 0.2);
+        }
+
+        .memory span {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.1rem;
+            color: #d7b2c0;
+        }
+
+        /* =========================
+           ENDING
+        ========================== */
+
+        .ending {
+            text-align: center;
+            padding: 80px 20px 140px;
+        }
+
+        .ending-line {
+            width: 70px;
+            height: 1px;
+            background: #a75c7c;
+            margin: 0 auto 40px;
+        }
+
+        .ending h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            font-weight: 400;
+            color: #f4dce5;
+            margin-bottom: 15px;
+        }
+
+        .ending p {
+            color: #a99ba2;
+            font-size: 0.95rem;
+            margin-bottom: 40px;
+        }
+
+        .continue-btn {
+            display: inline-block;
+            padding: 15px 38px;
+            border: 1px solid #9c5875;
+            color: #e8c6d3;
+            text-decoration: none;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.15rem;
+            letter-spacing: 2px;
+            transition: all 0.4s ease;
+        }
+
+        .continue-btn:hover {
+            background: #9c5875;
+            color: #fff;
+            box-shadow: 0 0 35px rgba(156, 88, 117, 0.25);
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           ANIMATIONS
+        ========================== */
+
+        @keyframes heroAppear {
+
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulseLine {
+
+            0%,
+            100% {
+                opacity: 0.35;
+                transform: scaleY(0.7);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 700px) {
+
+            .hero {
+                min-height: 95vh;
+            }
+
+            .hero h1 {
+                font-size: 4.2rem;
+            }
+
+            .message-section {
+                padding: 80px 15px;
+            }
+
+            .message-card {
+                padding: 35px 23px;
+            }
+
+            .message-card p {
+                font-size: 0.98rem;
+                line-height: 2;
+            }
+
+            .highlight {
+                font-size: 1.65rem !important;
+            }
+
+            .memories {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .date {
+                letter-spacing: 3px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">
+                Happy 11th Monthsary
+            </p>
+
+            <h1>
+                Eaint Mon Aung
+            </h1>
+
+            <h2>
+                MaMa
+            </h2>
+
+            <p class="eternity">
+                My Love For Eternity
+            </p>
+
+            <p class="date">
+                18 · 09 · 2026
+            </p>
+
+            <div class="scroll-line"></div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         MESSAGE
+    ========================== -->
+
+    <section class="message-section">
+
+        <p class="section-label">
+            11 Months With You
+        </p>
+
+
+        <div class="message-card">
+
+            <p>
+                ၁၁ လလေးပဲဆိုပေမဲ့
+                မောင်နဲ့မမနဲ့ ဖြတ်သန်းခဲ့ရတာတွေအများကြီးပဲနော် မမ။
+            </p>
+
+
+            <p>
+                ၁၁ လလေးအတွင်း မမက မောင်မောင့်ကို
+                မောင်မောင့်ဘဝမှာ မရခဲ့ဖူးတဲ့
+                ပျော်ရွှင်မှုတွေပေးခဲ့တယ်။
+            </p>
+
+
+            <p>
+                မမက မောင်မောင့်ကို ချစ်တတ်လာအောင်၊
+                ယောကျာ်းကောင်းတစ်ယောက်ဖြစ်လာအောင်၊
+                ဂရုစိုက်တတ်လာအောင်
+                စိတ်ရှည်ရှည်နဲ့ သင်ပြပေးခဲ့တယ်။
+            </p>
+
+
+            <p>
+                မောင်မောင့်ရဲ့ အမှားတွေကိုလည်း
+                မမက ခွင့်လွှတ်ပေးခဲ့တယ်။
+            </p>
+
+
+            <p class="highlight">
+                မုန့်တွေလည်း အတူတူစားခဲ့တယ်။<br>
+                သီချင်းတွေလည်း အတူတူနားထောင်ခဲ့တယ်။<br>
+                ဇာတ်ကားတွေလည်း အတူတူကြည့်ခဲ့တယ်။
+            </p>
+
+
+            <p>
+                ဒီလိုသေးသေးလေးတွေကပဲ
+                မောင်မောင့်အတွက် အရမ်းတန်ဖိုးရှိတဲ့
+                အမှတ်တရတွေ ဖြစ်လာခဲ့တယ်။
+            </p>
+
+
+            <p>
+                မမအပြုံးလေးတွေက အရမ်းလှတယ်။
+                မမအပြုံးလေးမြင်တိုင်း
+                မောင်မောင့်စိတ်ထဲ အေးချမ်းတယ်။
+            </p>
+
+
+            <p>
+                မမရဲ့အသံလေးကလည်း
+                မောင်မောင့်နားထဲမှာ
+                နားဝင်အချိုဆုံးပဲ။
+            </p>
+
+
+            <p>
+                မမဆီက
+                "မောင်မောင်ရေ အရမ်းချစ်တယ်နော်"
+                "မောင်မောင် လွမ်းလိုက်တာ"
+                ဒီလိုစကားလေးတွေ ကြားရင်
+                မောင်မောင့်ရင်ထဲမှာ
+                ဘယ်လိုပျော်လို့ ပျော်မှန်းမသိအောင်
+                ပျော်မိတယ် မမ။
+            </p>
+
+
+            <div class="memories">
+
+                <div class="memory">
+                    <span>
+                        အတူတူစားခဲ့တဲ့မုန့်တွေ
+                    </span>
+                </div>
+
+                <div class="memory">
+                    <span>
+                        အတူတူနားထောင်ခဲ့တဲ့သီချင်းတွေ
+                    </span>
+                </div>
+
+                <div class="memory">
+                    <span>
+                        အတူတူကြည့်ခဲ့တဲ့ဇာတ်ကားတွေ
+                    </span>
+                </div>
+
+            </div>
+
+
+            <p class="highlight">
+                ၁၁ လဆိုတာ အချိန်အကြာကြီးမဟုတ်သေးပေမဲ့
+                မမနဲ့အတူရှိခဲ့တဲ့ အချိန်တိုင်းက
+                မောင်မောင့်အတွက် အဓိပ္ပာယ်ရှိတယ်။
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ENDING
+    ========================== -->
+
+    <section class="ending">
+
+        <div class="ending-line"></div>
+
+        <h3>
+            This is only the beginning.
+        </h3>
+
+        <p>
+            There is still a story I want to tell you.
+        </p>
+
+        <a href="story.html" class="continue-btn">
+            Our Story
+        </a>
+
+    </section>
+
+
+</body>
+
+</html>
+```

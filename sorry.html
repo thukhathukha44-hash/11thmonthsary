@@ -1,0 +1,136 @@
+﻿```html
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>တောင်းပန်ပါတယ် မမ</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="sorry-page">
+
+<main class="sorry-container">
+
+    <section class="sorry-card">
+
+        <p class="sorry-label">FOR MY LOVE</p>
+
+        <h1>မမရေ...</h1>
+
+        <div class="sorry-message">
+
+            <p>
+                မမ နဲ့မောင်ကြားထဲ
+                အရင်တုန်းက ပြဿနာတွေအများကြီးဖြစ်ခဲ့ကြတယ်။
+            </p>
+
+            <p>
+                မောင်လဲအရမ်းဆိုးခဲ့မိတယ်။
+                မမ အတွက် ပြဿနာတွေဖြစ်စေခဲ့မိတယ်။
+                မောင်နားမလည်ခဲ့တာတွေ၊
+                အလိုက်မသိခဲ့တာတွေ
+                မမကို တောင်းပန်ပါတယ်နော် မမ။
+            </p>
+
+            <p>
+                မောင်မောင် နောက်တစ်ခါ
+                ပုံတွေရော Video တွေရော မတောင်းတော့ပါဘူး။
+                မမနဲ့ပဲ အေးအေးဆေးဆေးလေး
+                ရှင်သန်သွားမယ်နော် မမ။
+            </p>
+
+            <p>
+                မောင်မောင့်အပြစ်တွေအတွက်
+                မောင်မောင် တောင်းပန်ပါတယ်နော်။
+            </p>
+
+            <p class="sorry-final">
+                ခွင့်လွှတ်ပေးပါလား မမ
+            </p>
+
+        </div>
+
+        <div class="answer-area">
+
+            <button
+                id="noButton"
+                class="answer-button no-button"
+                onclick="notForgiven()">
+                မခွင့်လွှတ်ဘူး
+            </button>
+
+            <button
+                id="yesButton"
+                class="answer-button yes-button"
+                onclick="forgiven()">
+                ခွင့်လွှတ်ပါတယ်
+            </button>
+
+        </div>
+
+        <p id="littleMessage" class="little-message"></p>
+
+    </section>
+
+</main>
+
+
+<script>
+
+let taps = 0;
+
+const noButton = document.getElementById("noButton");
+const yesButton = document.getElementById("yesButton");
+const littleMessage = document.getElementById("littleMessage");
+
+function notForgiven() {
+
+    taps++;
+
+    /*
+        Every time "မခွင့်လွှတ်ဘူး" is pressed:
+        YES gets bigger
+        NO gets smaller
+    */
+
+    let yesSize = Math.min(1 + (taps * 0.12), 2.2);
+    let noSize = Math.max(1 - (taps * 0.08), 0.55);
+
+    yesButton.style.transform = `scale(${yesSize})`;
+    noButton.style.transform = `scale(${noSize})`;
+
+    const messages = [
+        "မမရေ... တစ်ခါလောက်တော့ ခွင့်လွှတ်ပေးပါနော်",
+        "မောင်မောင် တကယ်တောင်းပန်ပါတယ်",
+        "မမ စိတ်မဆိုးတော့နဲ့နော်",
+        "မောင်မောင် အရင်ကအမှားတွေကို ပြင်ပါမယ်",
+        "တစ်ခါလောက်ပဲ ခွင့်လွှတ်ပေးပါနော် မမ"
+    ];
+
+    littleMessage.textContent =
+        messages[Math.min(taps - 1, messages.length - 1)];
+}
+
+
+function forgiven() {
+
+    littleMessage.textContent = "ကျေးဇူးတင်ပါတယ် မမ...";
+
+    yesButton.disabled = true;
+    noButton.disabled = true;
+
+    yesButton.classList.add("accepted");
+
+    setTimeout(() => {
+        window.location.href = "proposal.html";
+    }, 1200);
+}
+
+</script>
+
+</body>
+</html>
+```

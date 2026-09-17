@@ -1,0 +1,2558 @@
+```css
+/* =========================================
+   OUR 11TH MONTHSARY
+   COMPLETE SHARED STYLESHEET
+========================================= */
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: #08060a;
+    color: #f8edf2;
+
+    font-family:
+        "Noto Sans Myanmar",
+        "Myanmar Text",
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    z-index: -2;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(130, 43, 82, 0.20),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(75, 37, 91, 0.18),
+            transparent 38%
+        ),
+        linear-gradient(
+            145deg,
+            #08060a,
+            #0d080d 50%,
+            #08060a
+        );
+}
+
+body::after {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    z-index: -1;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.45) 1px,
+            transparent 1px
+        );
+
+    background-size: 150px 150px;
+
+    opacity: 0.035;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   PAGE 1
+   HOME
+========================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    position: relative;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 950px;
+
+    animation:
+        heroEnter 1.8s
+        cubic-bezier(.2,.7,.2,1)
+        forwards;
+}
+
+.small-title {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 1rem;
+    font-weight: 500;
+
+    letter-spacing: 7px;
+
+    text-transform: uppercase;
+
+    color: #b87892;
+
+    margin-bottom: 35px;
+}
+
+.hero h1 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(4.5rem, 11vw, 9rem);
+
+    font-weight: 500;
+
+    line-height: 0.85;
+
+    color: #fff6f9;
+
+    margin-bottom: 35px;
+
+    text-shadow:
+        0 0 40px
+        rgba(196,117,151,0.10);
+}
+
+.hero h2 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(2rem, 4vw, 3.1rem);
+
+    font-weight: 400;
+
+    color: #dba6bb;
+
+    margin-bottom: 18px;
+}
+
+.eternity {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 1.25rem;
+
+    font-style: italic;
+
+    letter-spacing: 2px;
+
+    color: #ad9aa4;
+}
+
+.date {
+    margin-top: 45px;
+
+    font-size: .75rem;
+
+    letter-spacing: 7px;
+
+    color: #786a72;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 70px;
+
+    margin: 45px auto 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #b76a89,
+            transparent
+        );
+
+    animation:
+        linePulse 2.5s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================
+   HOME MESSAGE
+========================================= */
+
+.message-section {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 130px 25px 110px;
+}
+
+.section-label {
+    text-align: center;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 1rem;
+
+    letter-spacing: 6px;
+
+    text-transform: uppercase;
+
+    color: #ad6782;
+
+    margin-bottom: 55px;
+}
+
+.message-card {
+    position: relative;
+
+    padding: 70px 65px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(28,16,25,.72),
+            rgba(12,8,12,.72)
+        );
+
+    border-top:
+        1px solid
+        rgba(196,117,151,.18);
+
+    border-bottom:
+        1px solid
+        rgba(196,117,151,.12);
+
+    box-shadow:
+        0 35px 100px
+        rgba(0,0,0,.35);
+}
+
+.message-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90px;
+    height: 1px;
+
+    background: #bd718f;
+
+    box-shadow:
+        0 0 18px
+        rgba(189,113,143,.35);
+}
+
+.message-card p {
+    font-size: 1rem;
+
+    font-weight: 300;
+
+    line-height: 2.25;
+
+    color: #ded1d7;
+
+    margin-bottom: 35px;
+}
+
+.highlight {
+    text-align: center;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 2rem !important;
+
+    font-weight: 500;
+
+    line-height: 1.7 !important;
+
+    color: #dfa8bd !important;
+
+    margin: 60px 0 !important;
+}
+
+
+/* =========================================
+   MEMORIES
+========================================= */
+
+.memories {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 20px;
+
+    margin: 65px 0;
+}
+
+.memory {
+    padding: 32px 18px;
+
+    text-align: center;
+
+    border-top:
+        1px solid
+        rgba(201,138,166,.15);
+
+    border-bottom:
+        1px solid
+        rgba(201,138,166,.15);
+
+    transition:
+        transform .45s ease,
+        background .45s ease;
+}
+
+.memory:hover {
+    transform: translateY(-5px);
+
+    background:
+        rgba(170,75,111,.05);
+}
+
+.memory span {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 1.15rem;
+
+    color: #d3aebe;
+}
+
+
+/* =========================================
+   HOME ENDING
+========================================= */
+
+.ending {
+    text-align: center;
+
+    padding: 100px 20px 160px;
+}
+
+.ending-line {
+    width: 65px;
+    height: 1px;
+
+    background: #a85d7d;
+
+    margin: 0 auto 45px;
+}
+
+.ending h3 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(2.5rem,5vw,4.4rem);
+
+    font-weight: 400;
+
+    line-height: 1.3;
+
+    color: #f3dce5;
+
+    margin-bottom: 20px;
+}
+
+.ending p {
+    font-size: .92rem;
+
+    color: #9d8e96;
+
+    margin-bottom: 45px;
+}
+
+.continue-btn {
+    display: inline-block;
+
+    padding: 16px 42px;
+
+    border:
+        1px solid
+        rgba(181,100,133,.7);
+
+    color: #e5c4d0;
+
+    text-decoration: none;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 1.1rem;
+
+    letter-spacing: 2px;
+
+    transition:
+        background .4s ease,
+        color .4s ease,
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+.continue-btn:hover {
+    background: #a05c79;
+
+    color: #fff;
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 40px
+        rgba(160,92,121,.25);
+}
+
+
+/* =========================================
+   PAGE 2
+   STORY
+========================================= */
+
+.story-page {
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    padding:
+        110px 25px
+        130px;
+
+    text-align: center;
+}
+
+.story-header {
+    margin-bottom: 130px;
+}
+
+.story-label {
+    font-size: 10px;
+
+    letter-spacing: 7px;
+
+    color: #a96480;
+
+    opacity: .8;
+
+    margin-bottom: 28px;
+}
+
+.story-header h1 {
+    font-size:
+        clamp(2.7rem,7vw,4.5rem);
+
+    font-weight: 400;
+
+    line-height: 1.35;
+
+    color: #fff3f7;
+
+    margin-bottom: 25px;
+}
+
+.story-subtitle {
+    font-size: .95rem;
+
+    line-height: 2;
+
+    color: #a99ba3;
+}
+
+.story-memory {
+    width: 100%;
+
+    margin-bottom: 155px;
+
+    padding: 0 20px;
+}
+
+.story-memory-number {
+    display: block;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    color: #a96480;
+
+    opacity: .7;
+
+    margin-bottom: 20px;
+}
+
+.story-memory h2 {
+    font-size:
+        clamp(2rem,5vw,3rem);
+
+    font-weight: 400;
+
+    line-height: 1.45;
+
+    color: #f3e1e8;
+
+    margin-bottom: 48px;
+}
+
+.story-text,
+.story-memory-text {
+    width: 100%;
+    max-width: 650px;
+
+    margin: 0 auto;
+}
+
+.story-text p,
+.story-memory-text p {
+    font-size: 1rem;
+
+    font-weight: 300;
+
+    line-height: 2.3;
+
+    color: #d9cbd1;
+
+    margin-bottom: 30px;
+}
+
+.story-emphasis {
+    font-size:
+        clamp(1.35rem,4vw,1.7rem) !important;
+
+    font-weight: 400 !important;
+
+    line-height: 1.9 !important;
+
+    color: #dfa8bd !important;
+
+    margin-top: 45px !important;
+
+    margin-bottom: 45px !important;
+}
+
+.story-photo-box {
+    width: 100%;
+    max-width: 650px;
+
+    margin: 60px auto 0;
+
+    padding: 9px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    border:
+        1px solid
+        rgba(201,138,166,.17);
+
+    box-shadow:
+        0 30px 90px
+        rgba(0,0,0,.4);
+}
+
+.story-photo-box img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+.story-photo-caption {
+    padding: 18px 10px 8px;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    color: #968790;
+}
+
+.story-little-note {
+    margin-top: 30px;
+
+    font-size: 14px;
+
+    color: #93828b;
+
+    opacity: .65;
+}
+
+.story-end {
+    padding-top: 10px;
+
+    text-align: center;
+}
+
+.story-end-line {
+    width: 65px;
+    height: 1px;
+
+    background: #a85d7d;
+
+    opacity: .65;
+
+    margin: 0 auto 50px;
+}
+
+.story-end h2 {
+    font-size:
+        clamp(2rem,5vw,3rem);
+
+    font-weight: 400;
+
+    line-height: 1.5;
+
+    color: #f3dce5;
+
+    margin-bottom: 22px;
+}
+
+.story-end p {
+    font-size: 1rem;
+
+    line-height: 2.2;
+
+    color: #a99ba3;
+
+    margin-bottom: 45px;
+}
+
+.story-button {
+    display: inline-block;
+
+    padding: 15px 38px;
+
+    border:
+        1px solid
+        rgba(181,100,133,.65);
+
+    border-radius: 50px;
+
+    color: #e5c4d0;
+
+    text-decoration: none;
+
+    font-size: .9rem;
+
+    transition:
+        background .4s ease,
+        color .4s ease,
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+.story-button:hover {
+    background: #a05c79;
+
+    color: #fff;
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 40px
+        rgba(160,92,121,.25);
+}
+
+
+/* =========================================
+   PAGE 3
+   SORRY
+========================================= */
+
+.sorry-page {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        80px 25px
+        100px;
+
+    position: relative;
+}
+
+.sorry-page::before {
+    content: "";
+
+    position: fixed;
+
+    width: 600px;
+    height: 600px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(155,62,105,.12),
+            transparent 68%
+        );
+
+    pointer-events: none;
+}
+
+.sorry-container {
+    width: 100%;
+    max-width: 760px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+.sorry-card {
+    text-align: center;
+
+    padding:
+        30px 20px;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+}
+
+.sorry-label {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: .85rem;
+
+    letter-spacing: 7px;
+
+    color: #a96480;
+
+    margin-bottom: 30px;
+
+    opacity: .8;
+}
+
+.sorry-card h1 {
+    font-size:
+        clamp(2.8rem,7vw,4.8rem);
+
+    font-weight: 400;
+
+    line-height: 1.3;
+
+    color: #fff3f7;
+
+    margin-bottom: 60px;
+}
+
+.sorry-card h1::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 1px;
+
+    background: #a85d7d;
+
+    margin: 30px auto 0;
+
+    opacity: .7;
+}
+
+.sorry-message {
+    width: 100%;
+    max-width: 650px;
+
+    margin: 0 auto;
+}
+
+.sorry-message p {
+    font-size: 1rem;
+
+    font-weight: 300;
+
+    line-height: 2.3;
+
+    color: #d9cbd1;
+
+    margin-bottom: 35px;
+}
+
+.sorry-message .sorry-final {
+    margin-top: 55px;
+
+    margin-bottom: 0;
+
+    font-size:
+        clamp(1.3rem,3vw,1.7rem);
+
+    line-height: 1.9;
+
+    color: #e0afc3;
+
+    text-shadow:
+        0 0 25px
+        rgba(190,105,143,.12);
+}
+
+
+/* =========================================
+   SORRY BUTTONS
+========================================= */
+
+.answer-area {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    min-height: 190px;
+
+    margin-top: 20px;
+}
+
+.answer-button {
+    position: relative;
+
+    padding: 16px 30px;
+
+    border: none;
+
+    outline: none;
+
+    font-family:
+        "Noto Sans Myanmar",
+        "Myanmar Text",
+        sans-serif;
+
+    font-size: .88rem;
+
+    font-weight: 400;
+
+    cursor: pointer;
+
+    transition:
+        transform .55s
+        cubic-bezier(.2,.8,.2,1),
+
+        opacity .55s ease,
+
+        background .4s ease,
+
+        box-shadow .4s ease;
+}
+
+.no-button {
+    background: transparent;
+
+    color: #907f87;
+
+    border:
+        1px solid
+        rgba(180,145,158,.25);
+
+    transform-origin: center;
+}
+
+.no-button:hover {
+    color: #b8a5ad;
+
+    border-color:
+        rgba(200,160,175,.4);
+}
+
+.yes-button {
+    background: #9e5878;
+
+    color: #fff5f8;
+
+    border:
+        1px solid
+        #b66b8b;
+
+    box-shadow:
+        0 12px 35px
+        rgba(120,45,80,.22);
+
+    transform-origin: center;
+}
+
+.yes-button:hover {
+    background: #b36889;
+
+    box-shadow:
+        0 16px 45px
+        rgba(150,65,100,.3);
+}
+
+.yes-button.accepted {
+    box-shadow:
+        0 0 30px
+        rgba(210,130,165,.35),
+
+        0 0 70px
+        rgba(150,60,100,.18);
+}
+
+.little-message {
+    min-height: 30px;
+
+    margin-top: 5px;
+
+    font-size: .84rem;
+
+    font-weight: 300;
+
+    line-height: 1.8;
+
+    color: #9d8b94;
+
+    opacity: .9;
+}
+
+
+/* =========================================
+   PAGE 4
+   PROPOSAL
+========================================= */
+
+.proposal-page {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        80px 20px
+        110px;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.proposal-container {
+    width: 100%;
+    max-width: 780px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+.proposal-card {
+    width: 100%;
+
+    padding: 30px 20px;
+}
+
+
+/* ---------- LABEL ---------- */
+
+.proposal-label {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: .85rem;
+
+    letter-spacing: 7px;
+
+    color: #a96480;
+
+    opacity: .8;
+
+    margin-bottom: 30px;
+}
+
+
+/* ---------- TITLE ---------- */
+
+.proposal-card h1 {
+    font-size:
+        clamp(3rem,8vw,5rem);
+
+    font-weight: 400;
+
+    line-height: 1.3;
+
+    color: #fff3f7;
+
+    margin-bottom: 25px;
+}
+
+.proposal-line {
+    width: 55px;
+    height: 1px;
+
+    background: #a85d7d;
+
+    margin:
+        0 auto 60px;
+
+    opacity: .7;
+}
+
+
+/* =========================================
+   PROPOSAL MESSAGE
+========================================= */
+
+.proposal-message {
+    width: 100%;
+    max-width: 650px;
+
+    margin: 0 auto;
+}
+
+.proposal-message p {
+    font-size: 1rem;
+
+    font-weight: 300;
+
+    line-height: 2.35;
+
+    color: #d9cbd1;
+
+    margin-bottom: 34px;
+}
+
+.proposal-message .proposal-emphasis {
+    font-size:
+        clamp(1.35rem,4vw,1.8rem);
+
+    color: #dfa8bd;
+
+    margin-top: 50px;
+
+    margin-bottom: 25px;
+}
+
+.proposal-message .proposal-final {
+    font-size:
+        clamp(1.35rem,4vw,1.8rem);
+
+    color: #e0afc3;
+
+    margin-top: 50px;
+
+    margin-bottom: 0;
+
+    text-shadow:
+        0 0 25px
+        rgba(190,105,143,.12);
+}
+
+
+/* =========================================
+   MARRIAGE PROMISE
+========================================= */
+
+.marriage-promise {
+    margin-top: 65px;
+
+    padding-top: 45px;
+
+    border-top:
+        1px solid
+        rgba(201,138,166,.12);
+}
+
+.marriage-promise p {
+    color: #cbbac2;
+
+    margin-bottom: 25px;
+}
+
+.marriage-promise p:last-child {
+    color: #dfa8bd;
+
+    font-size: 1.05rem;
+
+    margin-top: 35px;
+}
+
+
+/* =========================================
+   PROPOSAL QUESTION
+========================================= */
+
+.proposal-question {
+    margin-top: 90px;
+}
+
+.proposal-question p {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 1.25rem;
+
+    color: #b98ca0;
+
+    margin-bottom: 18px;
+}
+
+.proposal-question h2 {
+    font-size:
+        clamp(2.3rem,6vw,3.7rem);
+
+    font-weight: 400;
+
+    line-height: 1.4;
+
+    color: #fff1f6;
+}
+
+
+/* =========================================
+   PROPOSAL BUTTONS
+========================================= */
+
+.proposal-buttons {
+    min-height: 180px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 22px;
+
+    margin-top: 45px;
+}
+
+.proposal-button {
+    padding: 16px 28px;
+
+    font-family:
+        "Noto Sans Myanmar",
+        "Myanmar Text",
+        sans-serif;
+
+    font-size: .85rem;
+
+    cursor: pointer;
+
+    transition:
+        transform .55s
+        cubic-bezier(.2,.8,.2,1),
+
+        opacity .4s ease,
+
+        background .4s ease,
+
+        box-shadow .4s ease;
+}
+
+
+/* ---------- PROPOSAL NO ---------- */
+
+.proposal-button.no-button {
+    background: transparent;
+
+    color: #907f87;
+
+    border:
+        1px solid
+        rgba(180,145,158,.25);
+}
+
+.proposal-button.no-button:hover {
+    color: #b8a5ad;
+
+    border-color:
+        rgba(200,160,175,.4);
+}
+
+
+/* ---------- PROPOSAL YES ---------- */
+
+.proposal-button.yes-button {
+    background: #9e5878;
+
+    color: #fff5f8;
+
+    border:
+        1px solid
+        #b66b8b;
+
+    box-shadow:
+        0 12px 35px
+        rgba(120,45,80,.25);
+
+    transform-origin: center;
+}
+
+.proposal-button.yes-button:hover {
+    background: #b36889;
+
+    box-shadow:
+        0 18px 50px
+        rgba(150,65,100,.35);
+}
+
+.proposal-button.yes-button.very-big {
+    box-shadow:
+        0 0 35px
+        rgba(210,130,165,.30),
+
+        0 0 80px
+        rgba(150,60,100,.18);
+}
+
+.proposal-button.yes-button.accepted {
+    box-shadow:
+        0 0 40px
+        rgba(220,145,175,.45),
+
+        0 0 100px
+        rgba(150,60,100,.25);
+}
+
+
+/* =========================================
+   PROPOSAL NOTE
+========================================= */
+
+.proposal-note {
+    min-height: 35px;
+
+    margin-top: 15px;
+
+    font-size: .84rem;
+
+    line-height: 1.9;
+
+    color: #9d8b94;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes heroEnter {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes linePulse {
+
+    0%,
+    100% {
+        opacity: .3;
+
+        transform:
+            scaleY(.65);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            scaleY(1);
+    }
+}
+
+
+/* =========================================
+   TABLET / MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    /* HOME */
+
+    .hero {
+        min-height: 95vh;
+
+        padding:
+            35px 18px;
+    }
+
+    .small-title {
+        font-size: .85rem;
+
+        letter-spacing: 5px;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+
+        line-height: .9;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .eternity {
+        font-size: 1.05rem;
+    }
+
+    .date {
+        letter-spacing: 4px;
+    }
+
+    .message-section {
+        padding:
+            90px 18px 80px;
+    }
+
+    .message-card {
+        padding:
+            45px 25px;
+    }
+
+    .message-card p {
+        font-size: .94rem;
+
+        line-height: 2.1;
+    }
+
+    .highlight {
+        font-size:
+            1.6rem !important;
+    }
+
+    .memories {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .memory {
+        padding:
+            25px 15px;
+    }
+
+    .ending {
+        padding:
+            70px 20px
+            110px;
+    }
+
+    .ending h3 {
+        font-size: 2.5rem;
+    }
+
+
+    /* STORY */
+
+    .story-page {
+        padding:
+            70px 18px
+            90px;
+    }
+
+    .story-header {
+        margin-bottom: 90px;
+    }
+
+    .story-header h1 {
+        font-size: 2.5rem;
+
+        line-height: 1.5;
+    }
+
+    .story-subtitle {
+        font-size: .9rem;
+    }
+
+    .story-memory {
+        margin-bottom: 110px;
+
+        padding: 0 5px;
+    }
+
+    .story-memory h2 {
+        font-size: 2rem;
+
+        margin-bottom: 38px;
+    }
+
+    .story-text p,
+    .story-memory-text p {
+        font-size: .92rem;
+
+        line-height: 2.15;
+
+        margin-bottom: 25px;
+    }
+
+    .story-emphasis {
+        font-size:
+            1.25rem !important;
+    }
+
+    .story-photo-box {
+        margin-top: 45px;
+
+        padding: 7px;
+    }
+
+    .story-end h2 {
+        font-size: 2rem;
+    }
+
+
+    /* SORRY */
+
+    .sorry-page {
+        padding:
+            60px 18px
+            80px;
+    }
+
+    .sorry-card {
+        padding:
+            20px 5px;
+    }
+
+    .sorry-label {
+        font-size: .72rem;
+
+        letter-spacing: 5px;
+
+        margin-bottom: 25px;
+    }
+
+    .sorry-card h1 {
+        font-size: 2.6rem;
+
+        margin-bottom: 45px;
+    }
+
+    .sorry-message p {
+        font-size: .92rem;
+
+        line-height: 2.15;
+
+        margin-bottom: 28px;
+    }
+
+    .sorry-message .sorry-final {
+        margin-top: 45px;
+
+        font-size: 1.25rem;
+    }
+
+    .answer-area {
+        gap: 14px;
+
+        min-height: 160px;
+
+        margin-top: 20px;
+    }
+
+    .answer-button {
+        padding:
+            14px 18px;
+
+        font-size: .78rem;
+    }
+
+    .little-message {
+        font-size: .78rem;
+    }
+
+
+    /* PROPOSAL */
+
+    .proposal-page {
+        padding:
+            60px 18px
+            80px;
+    }
+
+    .proposal-card {
+        padding:
+            20px 5px;
+    }
+
+    .proposal-label {
+        font-size: .72rem;
+
+        letter-spacing: 5px;
+    }
+
+    .proposal-card h1 {
+        font-size: 2.7rem;
+    }
+
+    .proposal-line {
+        margin-bottom: 45px;
+    }
+
+    .proposal-message p {
+        font-size: .92rem;
+
+        line-height: 2.15;
+
+        margin-bottom: 27px;
+    }
+
+    .proposal-message .proposal-emphasis {
+        font-size: 1.3rem;
+
+        margin-top: 40px;
+    }
+
+    .proposal-message .proposal-final {
+        font-size: 1.25rem;
+    }
+
+    .marriage-promise {
+        margin-top: 50px;
+
+        padding-top: 35px;
+    }
+
+    .marriage-promise p {
+        font-size: .9rem;
+
+        line-height: 2.15;
+    }
+
+    .proposal-question {
+        margin-top: 65px;
+    }
+
+    .proposal-question h2 {
+        font-size: 2.15rem;
+    }
+
+    .proposal-buttons {
+        min-height: 170px;
+
+        gap: 14px;
+    }
+
+    .proposal-button {
+        padding:
+            14px 18px;
+
+        font-size: .78rem;
+    }
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 3.3rem;
+    }
+
+    .small-title {
+        font-size: .75rem;
+
+        letter-spacing: 3px;
+    }
+
+    .message-card {
+        padding:
+            35px 18px;
+    }
+
+    .message-card p {
+        font-size: .9rem;
+    }
+
+
+    /* STORY */
+
+    .story-page {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .story-header h1 {
+        font-size: 2.25rem;
+    }
+
+    .story-memory h2 {
+        font-size: 1.8rem;
+    }
+
+    .story-text p,
+    .story-memory-text p {
+        font-size: .87rem;
+    }
+
+
+    /* SORRY */
+
+    .sorry-page {
+        padding:
+            45px 15px
+            65px;
+    }
+
+    .sorry-card h1 {
+        font-size: 2.25rem;
+    }
+
+    .sorry-message p {
+        font-size: .85rem;
+
+        line-height: 2.05;
+    }
+
+    .sorry-message .sorry-final {
+        font-size: 1.15rem;
+    }
+
+    .answer-area {
+        gap: 9px;
+    }
+
+    .answer-button {
+        padding:
+            12px 13px;
+
+        font-size: .7rem;
+    }
+
+
+    /* PROPOSAL */
+
+    .proposal-page {
+        padding:
+            45px 15px
+            65px;
+    }
+
+    .proposal-card h1 {
+        font-size: 2.35rem;
+    }
+
+    .proposal-message p {
+        font-size: .86rem;
+
+        line-height: 2.05;
+    }
+
+    .marriage-promise p {
+        font-size: .84rem;
+
+        line-height: 2.05;
+    }
+
+    .proposal-question h2 {
+        font-size: 1.8rem;
+    }
+
+    .proposal-button {
+        padding:
+            12px 14px;
+
+        font-size: .7rem;
+    }
+}
+```
+/* =========================================
+   PAGE 5
+   YES / CELEBRATION
+========================================= */
+
+.yes-page {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            #fff4b8,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            #ffd8e8,
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            #ffe6c7,
+            transparent 38%
+        ),
+        linear-gradient(
+            135deg,
+            #fffdf5,
+            #fff5f8,
+            #fff9e8
+        );
+
+    color: #694653;
+
+    overflow-x: hidden;
+
+    position: relative;
+}
+
+
+/* =========================================
+   YES BACKGROUND DECORATION
+========================================= */
+
+.yes-page::before {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(220, 110, 145, .16) 2px,
+            transparent 2px
+        );
+
+    background-size: 90px 90px;
+
+    opacity: .45;
+}
+
+
+/* =========================================
+   YES CONTAINER
+========================================= */
+
+.yes-container {
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        90px 20px
+        110px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   YES CARD
+========================================= */
+
+.yes-card {
+    width: 100%;
+
+    max-width: 850px;
+
+    padding:
+        65px 65px
+        70px;
+
+    text-align: center;
+
+    background:
+        rgba(255,255,255,.82);
+
+    border:
+        1px solid
+        rgba(211,125,157,.22);
+
+    border-radius: 35px;
+
+    box-shadow:
+        0 30px 90px
+        rgba(180,90,120,.16),
+
+        0 5px 25px
+        rgba(220,160,120,.10);
+
+    backdrop-filter: blur(8px);
+
+    position: relative;
+
+    z-index: 5;
+
+    animation:
+        yesPageEnter 1.2s
+        cubic-bezier(.2,.7,.2,1)
+        forwards;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.yes-label {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: .85rem;
+
+    letter-spacing: 7px;
+
+    color: #c06d8e;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.yes-card h1 {
+    font-size:
+        clamp(3rem,8vw,5rem);
+
+    font-weight: 400;
+
+    line-height: 1.3;
+
+    color: #8f4e68;
+
+    margin-bottom: 15px;
+}
+
+.yes-card h2 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(2rem,5vw,3rem);
+
+    font-weight: 500;
+
+    line-height: 1.4;
+
+    color: #d05d86;
+
+    margin-bottom: 55px;
+}
+
+
+/* =========================================
+   YES MESSAGE
+========================================= */
+
+.yes-message {
+    width: 100%;
+
+    max-width: 650px;
+
+    margin: 0 auto;
+}
+
+.yes-message p {
+    font-size: 1rem;
+
+    font-weight: 300;
+
+    line-height: 2.35;
+
+    color: #745c66;
+
+    margin-bottom: 32px;
+}
+
+
+/* =========================================
+   HAPPY EMPHASIS
+========================================= */
+
+.yes-emphasis {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(1.45rem,4vw,2rem) !important;
+
+    font-weight: 500 !important;
+
+    line-height: 1.8 !important;
+
+    color: #cf6389 !important;
+
+    margin:
+        55px 0 !important;
+}
+
+
+/* =========================================
+   FINAL MESSAGE
+========================================= */
+
+.yes-final {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(1.6rem,4vw,2.25rem) !important;
+
+    font-weight: 500 !important;
+
+    line-height: 1.8 !important;
+
+    color: #b64f78 !important;
+
+    margin-top: 55px !important;
+
+    margin-bottom: 0 !important;
+}
+
+
+/* =========================================
+   CELEBRATION AREA
+========================================= */
+
+.celebration {
+    margin-top: 60px;
+
+    padding-top: 45px;
+
+    border-top:
+        1px solid
+        rgba(202,105,140,.18);
+}
+
+.celebration p {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 1.3rem;
+
+    line-height: 1.8;
+
+    color: #b45d7b;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================
+   CSS TULIPS
+========================================= */
+
+.tulips {
+    height: 115px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    gap: 22px;
+
+    margin-bottom: 25px;
+}
+
+.tulips::before,
+.tulips::after {
+    content: "";
+
+    display: block;
+
+    width: 25px;
+    height: 48px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #e8799d,
+            #f3a5bd
+        );
+
+    border-radius:
+        60% 60% 45% 45%;
+
+    position: relative;
+
+    box-shadow:
+        0 5px 15px
+        rgba(200,90,125,.15);
+}
+
+.tulips::before {
+    transform:
+        rotate(-10deg)
+        translateY(-10px);
+}
+
+.tulips::after {
+    transform:
+        rotate(10deg)
+        translateY(-4px);
+}
+
+
+/* =========================================
+   TULIP CENTER
+========================================= */
+
+.tulips {
+    position: relative;
+}
+
+.tulips span {
+    display: block;
+
+    width: 25px;
+    height: 48px;
+
+    background: #ef8cac;
+
+    border-radius:
+        60% 60% 45% 45%;
+}
+
+
+/* =========================================
+   CSS CAKE
+========================================= */
+
+.big-cake {
+    position: relative;
+
+    width: 125px;
+    height: 85px;
+
+    margin:
+        10px auto
+        35px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #fff,
+            #ffe5ed
+        );
+
+    border:
+        2px solid
+        #e8a0b8;
+
+    border-radius:
+        12px 12px 18px 18px;
+
+    box-shadow:
+        0 12px 30px
+        rgba(200,100,135,.16);
+}
+
+.big-cake::before {
+    content: "";
+
+    position: absolute;
+
+    width: 105px;
+    height: 22px;
+
+    left: 50%;
+    top: -12px;
+
+    transform:
+        translateX(-50%);
+
+    background: #fff5f7;
+
+    border:
+        2px solid
+        #e8a0b8;
+
+    border-radius: 50%;
+}
+
+.big-cake::after {
+    content: "";
+
+    position: absolute;
+
+    width: 4px;
+    height: 24px;
+
+    left: 50%;
+    top: -34px;
+
+    transform:
+        translateX(-50%);
+
+    background: #e0a24f;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 -7px 0 -1px #f2a95d;
+}
+
+
+/* =========================================
+   EXTRA CAKE DECORATION
+========================================= */
+
+.cake-one,
+.cake-two,
+.flower-one,
+.flower-two,
+.flower-three {
+    position: absolute;
+
+    z-index: 3;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   DECORATIVE TULIP FLOWERS
+========================================= */
+
+.flower-one,
+.flower-two,
+.flower-three {
+    width: 34px;
+    height: 50px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #e77c9d,
+            #f3a9bd
+        );
+
+    border-radius:
+        65% 65% 45% 45%;
+
+    box-shadow:
+        0 8px 20px
+        rgba(190,80,120,.12);
+
+    animation:
+        flowerFloat 4s
+        ease-in-out
+        infinite;
+}
+
+.flower-one {
+    top: 10%;
+    left: 8%;
+
+    transform: rotate(-12deg);
+}
+
+.flower-two {
+    right: 9%;
+    bottom: 13%;
+
+    transform: rotate(12deg);
+
+    animation-delay: 1.3s;
+}
+
+.flower-three {
+    top: 22%;
+    right: 15%;
+
+    width: 25px;
+    height: 38px;
+
+    transform: rotate(8deg);
+
+    animation-delay: 2s;
+}
+
+
+/* =========================================
+   FLOWER STEM
+========================================= */
+
+.flower-one::after,
+.flower-two::after,
+.flower-three::after {
+    content: "";
+
+    position: absolute;
+
+    width: 3px;
+    height: 60px;
+
+    background: #78a56f;
+
+    left: 50%;
+    top: 42px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 5px;
+}
+
+
+/* =========================================
+   CAKE DECORATIONS
+========================================= */
+
+.cake-one,
+.cake-two {
+    width: 75px;
+    height: 50px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #fff,
+            #ffe1ea
+        );
+
+    border:
+        2px solid
+        #e7a0b7;
+
+    border-radius:
+        9px 9px 13px 13px;
+
+    animation:
+        cakeFloat 5s
+        ease-in-out
+        infinite;
+}
+
+.cake-one {
+    left: 8%;
+    bottom: 15%;
+}
+
+.cake-two {
+    right: 7%;
+    top: 13%;
+
+    width: 60px;
+    height: 42px;
+
+    animation-delay: 2s;
+}
+
+
+/* =========================================
+   CAKE TOP
+========================================= */
+
+.cake-one::before,
+.cake-two::before {
+    content: "";
+
+    position: absolute;
+
+    width: 60px;
+    height: 15px;
+
+    left: 50%;
+    top: -9px;
+
+    transform:
+        translateX(-50%);
+
+    background: #fff6f8;
+
+    border:
+        2px solid
+        #e7a0b7;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes yesPageEnter {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+@keyframes flowerFloat {
+
+    0%,
+    100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -15px;
+    }
+}
+
+@keyframes cakeFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-12px)
+            rotate(2deg);
+    }
+}
+
+
+/* =========================================
+   PAGE 5 MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .yes-container {
+        padding:
+            55px 15px
+            75px;
+    }
+
+    .yes-card {
+        padding:
+            45px 23px
+            50px;
+
+        border-radius: 27px;
+    }
+
+    .yes-label {
+        font-size: .7rem;
+
+        letter-spacing: 5px;
+    }
+
+    .yes-card h1 {
+        font-size: 2.7rem;
+    }
+
+    .yes-card h2 {
+        font-size: 2rem;
+
+        margin-bottom: 40px;
+    }
+
+    .yes-message p {
+        font-size: .92rem;
+
+        line-height: 2.15;
+
+        margin-bottom: 27px;
+    }
+
+    .yes-emphasis {
+        font-size: 1.35rem !important;
+
+        margin:
+            40px 0 !important;
+    }
+
+    .yes-final {
+        font-size: 1.45rem !important;
+    }
+
+    .celebration {
+        margin-top: 45px;
+
+        padding-top: 35px;
+    }
+
+    .celebration p {
+        font-size: 1.1rem;
+    }
+
+    .flower-one {
+        left: 3%;
+        top: 7%;
+    }
+
+    .flower-two {
+        right: 3%;
+        bottom: 8%;
+    }
+
+    .flower-three {
+        right: 5%;
+        top: 17%;
+    }
+
+    .cake-one {
+        left: 2%;
+        bottom: 12%;
+
+        transform: scale(.75);
+    }
+
+    .cake-two {
+        right: 2%;
+        top: 10%;
+
+        transform: scale(.7);
+    }
+}
+
+
+/* =========================================
+   PAGE 5 SMALL PHONES
+========================================= */
+
+@media (max-width: 400px) {
+
+    .yes-container {
+        padding:
+            40px 12px
+            60px;
+    }
+
+    .yes-card {
+        padding:
+            38px 18px
+            45px;
+    }
+
+    .yes-card h1 {
+        font-size: 2.3rem;
+    }
+
+    .yes-card h2 {
+        font-size: 1.75rem;
+    }
+
+    .yes-message p {
+        font-size: .86rem;
+
+        line-height: 2.05;
+    }
+
+    .yes-emphasis {
+        font-size: 1.2rem !important;
+    }
+
+    .yes-final {
+        font-size: 1.3rem !important;
+    }
+
+    .big-cake {
+        transform: scale(.85);
+    }
+}

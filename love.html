@@ -1,0 +1,507 @@
+﻿```html
+<!DOCTYPE html>
+<html lang="my">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For My Love | 11th Monthsary</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Noto Sans Myanmar", "Myanmar Text", sans-serif;
+            color: #fff;
+            min-height: 100vh;
+            background:
+                linear-gradient(
+                    rgba(20, 10, 25, 0.38),
+                    rgba(20, 10, 25, 0.58)
+                ),
+                url("love-bg.jpg") center center / cover fixed no-repeat;
+        }
+
+        /* Soft overlay */
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(
+                    circle at 50% 20%,
+                    rgba(255, 220, 190, 0.16),
+                    transparent 38%
+                );
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Main */
+
+        .page {
+            width: 100%;
+            min-height: 100vh;
+            padding: 70px 20px 100px;
+        }
+
+        .container {
+            width: min(900px, 100%);
+            margin: auto;
+        }
+
+        /* Header */
+
+        .intro {
+            text-align: center;
+            margin-bottom: 45px;
+            animation: fadeDown 1.2s ease;
+        }
+
+        .small-title {
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #ffe5ee;
+            margin-bottom: 18px;
+        }
+
+        .intro h1 {
+            font-size: clamp(38px, 7vw, 72px);
+            font-weight: 500;
+            letter-spacing: 1px;
+            line-height: 1.15;
+            text-shadow: 0 5px 25px rgba(0,0,0,0.35);
+        }
+
+        .intro p {
+            margin-top: 18px;
+            font-size: 17px;
+            color: #fff1f5;
+        }
+
+        /* Letter */
+
+        .letter {
+            background: rgba(255, 255, 255, 0.91);
+            color: #3b2630;
+            border-radius: 28px;
+            padding: clamp(28px, 6vw, 65px);
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.28),
+                0 5px 20px rgba(0, 0, 0, 0.12);
+
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+
+            animation: fadeUp 1.3s ease;
+        }
+
+        .letter-top {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .letter-top h2 {
+            font-size: clamp(25px, 5vw, 38px);
+            font-weight: 600;
+            color: #7d4054;
+            margin-bottom: 12px;
+        }
+
+        .letter-top span {
+            display: block;
+            font-size: 14px;
+            color: #96727d;
+            letter-spacing: 1px;
+        }
+
+        /* Sections */
+
+        .section {
+            margin-bottom: 34px;
+        }
+
+        .section p {
+            font-size: 16px;
+            line-height: 2.05;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Important sentence */
+
+        .highlight {
+            margin: 40px 0;
+            padding: 28px 25px;
+            border-left: 4px solid #b86b83;
+            background: rgba(184, 107, 131, 0.08);
+            border-radius: 0 18px 18px 0;
+        }
+
+        .highlight p {
+            margin: 0;
+            font-size: 18px;
+            line-height: 2;
+            color: #633b49;
+        }
+
+        /* Ending */
+
+        .ending {
+            text-align: center;
+            margin-top: 55px;
+            padding-top: 38px;
+            border-top: 1px solid rgba(125, 64, 84, 0.2);
+        }
+
+        .ending-main {
+            font-size: clamp(24px, 5vw, 38px);
+            color: #7d4054;
+            line-height: 1.8;
+            margin-bottom: 35px;
+        }
+
+        .signature {
+            font-size: 15px;
+            line-height: 2.2;
+            color: #745560;
+        }
+
+        .signature p {
+            margin-bottom: 8px;
+        }
+
+        /* Bottom */
+
+        .bottom {
+            text-align: center;
+            margin-top: 45px;
+        }
+
+        .bottom a {
+            display: inline-block;
+            padding: 14px 28px;
+            border: 1px solid rgba(255,255,255,0.7);
+            border-radius: 999px;
+            color: white;
+            text-decoration: none;
+            background: rgba(60, 25, 40, 0.3);
+            backdrop-filter: blur(8px);
+            transition: 0.3s ease;
+        }
+
+        .bottom a:hover {
+            background: rgba(255,255,255,0.18);
+            transform: translateY(-3px);
+        }
+
+        /* Animations */
+
+        @keyframes fadeDown {
+
+            from {
+                opacity: 0;
+                transform: translateY(-25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(35px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile */
+
+        @media (max-width: 600px) {
+
+            .page {
+                padding: 45px 13px 70px;
+            }
+
+            .intro {
+                margin-bottom: 30px;
+            }
+
+            .intro p {
+                font-size: 15px;
+            }
+
+            .letter {
+                padding: 27px 20px;
+                border-radius: 22px;
+            }
+
+            .section p {
+                font-size: 15px;
+                line-height: 2;
+            }
+
+            .highlight {
+                padding: 22px 18px;
+                margin: 30px 0;
+            }
+
+            .highlight p {
+                font-size: 16px;
+            }
+
+            .signature {
+                font-size: 14px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <main class="page">
+
+        <div class="container">
+
+            <header class="intro">
+
+                <div class="small-title">
+                    11th Monthsary
+                </div>
+
+                <h1>
+                    For My Love
+                </h1>
+
+                <p>
+                    A letter from မောင်မောင် to မမ
+                </p>
+
+            </header>
+
+
+            <article class="letter">
+
+                <div class="letter-top">
+
+                    <h2>
+                        Happy 11th Monthsary ပါ မမ
+                    </h2>
+
+                    <span>
+                        11 months of us
+                    </span>
+
+                </div>
+
+
+                <section class="section">
+
+                    <p>
+                        မမ ဒီနေ့ကစပြီး ပိုပျော်ရွှင်ပြီး ပိုပြီးစိတ်ချမ်းသာ၊ ကိုယ်ကျန်းမာဖြစ်လာပါစေ။
+                        မောင်မောင့်ကိုလဲ ချစ်သထက် ပိုပိုပြီးချစ်လာပြီး အမြဲချစ်ပြီး
+                        တစ်နေ့ထက်တစ်နေ့ ပိုပိုချစ်လာပြီး နောက်ကျ မမနဲ့မောင်တို့နှစ်ယောက်
+                        လက်ထပ်မင်္ဂလာဆောင်ရပါစေလို့ ဆုတောင်းပါတယ်။
+                    </p>
+
+                    <p>
+                        မမကို အရမ်းချစ်တယ်။ စစတွေ့ထဲက မမက မောင့်ဘဝမှာ မတွေ့ကြုံဘူးတဲ့
+                        ပျော်ရွှင်မှုတွေ ယူဆောင်လာပေးခဲ့တယ်။ မမနဲ့ရှိတဲ့အချိန်တွေက
+                        တန်ဖိုးဖြတ်မရဘူး၊ ဘာနဲ့မှ မလဲနိုင်ဘူး မမ။
+                    </p>
+
+                </section>
+
+
+                <section class="section">
+
+                    <p>
+                        မမက လှလဲလှတယ်၊ စိတ်ထားလေး၊ နှလုံးသားလေးကလဲ ဖြူစင်တယ်၊
+                        မိန်းမကောင်းလေးတစ်ယောက်လဲ ဖြစ်တယ်၊ သစ္စာရှိတယ်၊ ယဉ်ကျေးတယ်၊
+                        မမရဲ့အသံလေးက ချိုသာတယ်။
+                    </p>
+
+                    <p>
+                        မမရဲ့ “မောင်မောင်” ဆိုတဲ့ခေါ်တဲ့အသံလေးတွေ၊
+                        “ဂရုစိုက်သွား မောင်မောင်”၊ “ဂရုစိုက်ပြန် မောင်မောင်”၊
+                        “မောင်” ဆိုတဲ့ နာမည်လေး၊ စတာတွေကို များများခေါ်ပေးပါနော်။
+                        မမ တစ်ခုခုပြောမယ်ဆို မောင်မောင်ဖြစ်ဖြစ်၊ မောင်ဖြစ်ဖြစ်
+                        ထည့်ပြီး ခေါ်ပြောပေးပါနော်။
+                    </p>
+
+                    <p>
+                        အဲ့လိုလေး အခေါ်ခံရရင် စိတ်ထဲအေးချမ်းပြီး
+                        ဘယ်လိုပျော်လို့ပျော်မှန်းမသိဘူး။
+                    </p>
+
+                </section>
+
+
+                <div class="highlight">
+
+                    <p>
+                        မမ မနေ့က “မောင်လာရင် လယ်ဝေးမှာ မနက်စာလာစားပါလား”
+                        ဆိုတာလေးကလေ။ “လာရင် လယ်ဝေးမှာ မနက်စာလာစား” ဆိုတာနဲ့
+                        ဆိုလိုရင်းတူပေမဲ့ “မောင်” ဆိုတဲ့ စကားလုံးလေးတစ်ခု ပါသွားတာက
+                        မောင့်ကို ဘယ်ကပေါ်လာလို့ ပေါ်လာမှန်းမသိတဲ့ အပျော်တွေ
+                        ယူဆောင်လာပေးတယ် မမ။
+                    </p>
+
+                </div>
+
+
+                <section class="section">
+
+                    <p>
+                        မမနဲ့ပတ်သက်လာရင် မောင်က သဝန်တိုတာအရမ်းလေ မမ။
+                        မမမွေးထားတဲ့ မဲမဲကိုတောင် သဝန်တိုတာ။
+                        သူက ဘေးနားလာလာကပ်ကပ်နေနေတာ မောင်မှ နေရမရတာ။
+                        မောင်တို့လာရင် သူ့ပါခေါ်ခဲ့လေ မမ၊ လမ်းတစ်နေရာမှာ ထားခဲ့မယ်။
+                        ဘုရားသွားကျမယ်လေ မမ။
+                    </p>
+
+                    <p>
+                        ဘုရားသွားရင် မမကို မောင်မောင်ဝယ်ပေးတဲ့ ပါတိတ်လေးနဲ့
+                        မမချုပ်ထားတာလေးလေ၊ အရမ်းလှတာ။ ဝတ်ခဲ့လေ မမ။
+                        မြန်မာလိုမျိုးလေးလဲ မမနဲ့လိုက်တယ်၊ နန်းဆန်တယ်။
+                        မောင်မောင်တို့ လက်တွေတွဲပြီး တစ်ယောက်နဲ့တစ်ယောက်
+                        မမက မောင်မောင့်လက်မောင်းကို ဖက်ပြီး မောင့်မောင့်ကိုမှီပြီး
+                        သွားကျမယ်၊ ဘုရားမှာ ဆုတောင်းကျမယ်လေ မမ။
+                    </p>
+
+                </section>
+
+
+                <section class="section">
+
+                    <p>
+                        မမကိုလာတွေ့ရင် မောင်မောင်တို့နှစ်ယောက်
+                        တစ်သက်လုံးအမှတ်တရဖြစ်နေမဲ့ အရာလေးတွေလုပ်သွားချင်တယ် မမ။
+                        နဖူးလေးကို အနမ်းပေးချင်တယ်၊ မမလက်ကလေးကို ကိုင်ပြီး
+                        ပန်းခြံထဲ လျှောက်ချင်တယ်၊ မမကို မုန့်လေးခွံ့ကျွေးချင်တယ်၊
+                        မမကို ပန်းလေးပန်ပေးချင်တယ်၊ မမကို ဘယ်လောက်ချစ်ကြောင်း
+                        ပြောချင်တယ်၊ မမရဲ့ ပါးလေးနဲ့ လည်ပင်းလေးကို
+                        အနမ်းလေးတွေပေးချင်တယ်။
+                    </p>
+
+                </section>
+
+
+                <section class="section">
+
+                    <p>
+                        အိမ့်မွန်အောင် မောင့်ရဲ့ အနာဂတ်အမျိုးသမီး နာမည်လေးလေ။
+                        မမကို တစ်သက်လုံးချစ်သွားမယ်လို့ ကတိပေးပါတယ်။
+                        မမလဲ မောင့်ကို တစ်သက်လုံးချစ်သွားပေးပါနော်။
+                        အေးအတူပူအမျှ တူတူရှိနေကျမယ်။
+                        မမကို အရမ်းချစ်တယ်။
+                        ဘယ်လောက်ချစ်လဲဆို တစ်သက်လုံးထိုင်ပြောနေရင်တောင်
+                        ကုန်မှာမဟုတ်ဘူး။
+                    </p>
+
+                </section>
+
+
+                <section class="section">
+
+                    <p>
+                        မမကို အများကြီးချစ်တယ်။ မမကို ထာဝရချစ်တာပါ။
+                        နောင်ဘဝလဲ မမနဲ့ဆုံချင်တယ်၊ လက်ထပ်ချင်တယ်။
+                        ဒီဘဝမှာလဲ လက်ထပ်ချင်တယ်၊ ဘဝတိုင်းပေါ့ မမရယ်။
+                        ဒီဘဝမှာလဲ မောင်မောင်ရဲ့ ဘဝလက်တွဲဖော်လေး
+                        ဖြစ်ပေးပါနော် မမ။
+                    </p>
+
+                    <p>
+                        မောင်မောင်အလုပ်တွေ ကြိုးစားမယ်။
+                        မောင်မောင်ကျောင်းပြီးရင် မိဘတွေပါခေါ်လာပြီး
+                        စေ့စပ်ပွဲလုပ်ပါ့မယ်။ အလုပ်တွေလဲ သေသေချာချာကြိုးစား၊
+                        ပိုက်ဆံစုပြီး လာတောင်းရမ်းပါမယ်။
+                    </p>
+
+                    <p>
+                        လက်ထပ်ပြီးရင်လဲ မောင်မောင် အလုပ်ရော၊ အိမ်မှုကိစ္စရော
+                        အကုန်မောင်မောင်လုပ်ပါ့မယ်။
+                        မမကို ပင်ပန်းတာမျိုးတွေ မဖြစ်စေချင်ဘူးမို့။
+                        ကလေးယူတာ မယူတာလဲ အရေးမကြီးဘူး။
+                        မောင်မောင်က မမသဘော။
+                    </p>
+
+                    <p>
+                        ကလေးကို ယူတာမယူတာထက်၊ မမကို တစ်သက်လုံးဘေးနားမှာ
+                        မမရဲ့ဘဝလက်တွဲဖော်အဖြစ် နေချင်တာ။
+                        ကလေးကလဲ လိုအပ်တယ်၊ ကလေးတစ်ယောက်ရှိရင် ပိုခိုင်မြဲတယ်။
+                    </p>
+
+                </section>
+
+
+                <section class="section">
+
+                    <p>
+                        မောင်မောင်နဲ့ မမ အသက်ကြီးပြီး အိုမင်းသွားတဲ့အထိ
+                        မမကို မလျော့သောအချစ်တွေနဲ့ အမြဲချစ်ပါ့မယ်။
+                        မမကိုအမြဲ ကြင်ကြင်နာနာ ဂရုစိုက်ပါ့မယ် မမ။
+                    </p>
+
+                </section>
+
+
+                <div class="ending">
+
+                    <div class="ending-main">
+                        မမကို အရမ်းချစ်တယ် မမ။
+                    </div>
+
+                    <div class="signature">
+
+                        <p>
+                            ချစ်လှစွာသော အနာဂတ်မိန်းမလေး
+                            အိမ့်မွန်အောင်ဆီသို့။
+                        </p>
+
+                        <p>
+                            အိမ့်မွန်အောင်၏ ချစ်လှစွာသော
+                            အနာဂတ်ခင်ပွန်းလောင်း သုခမှ ပို့လိုက်ရပါသည်။
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
+```
